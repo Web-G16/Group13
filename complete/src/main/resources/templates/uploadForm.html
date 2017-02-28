@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body style="background-color:#64DD17">
+
+	<div th:if="${message}">
+		<h2 th:text="${message}"/>
+	</div>
+<center>
+<h1>Upload FILE into Google Driver - ĐIện toán nhóm 13-sáng thứ 7</h1>
+<h3>Chọn file có kích thước không quá 13100 bytes</h3>
+
+	<div>
+		<form method="POST" enctype="multipart/form-data" action="/">
+			<table>
+				<tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+				<tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+			</table>
+		</form>
+	</div>
+</center>
+	<div>
+		<ul>
+			<li th:each="file : ${files}">
+				<a th:href="${file}" th:text="${file}" />
+			</li>
+		</ul>
+	</div>
+
+</body>
+</html>
